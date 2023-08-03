@@ -1,6 +1,9 @@
 import express,{ Application } from "express"
 import { mainApp } from "./app/mainApp"
 import { Authentication } from "./config/DataBase"
+import env from "dotenv"
+env.config()
+
 
 const realport: number = parseInt(process.env.PORT!)
 const Port: number = realport

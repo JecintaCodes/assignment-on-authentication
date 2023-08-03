@@ -33,7 +33,7 @@ const authModel = new mongoose.Schema({
         },
     ]
 },
-{timestamp: true}
+{timestamps: true}
 
 )
 
