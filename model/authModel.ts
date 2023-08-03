@@ -7,20 +7,20 @@ interface iAuthData extends iAuth, mongoose.Document{}
 const authModel = new mongoose.Schema({
     userName:{
         type: String,
-        require: String,
+        require: true,
     },
     email:{
         type: String,
-        require: String,
+        require: true,
         unique: true,
     },
     password:{
         type: String,
-        require: String,
+        require: true,
     },
    avatar:{
         type: String,
-        require: String,
+       
     },
    avatarID:{
         type: String
