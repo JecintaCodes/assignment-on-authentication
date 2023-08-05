@@ -4,7 +4,6 @@ export interface iAuth{
     email?:string
     password?:string
     avatar?:any
-    avatarUrl?:any
     avatarID?:any
     article: {} []
 }

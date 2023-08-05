@@ -26,9 +26,7 @@ const authModel = new mongoose.Schema({
         type: String
        
     },
-    avatarUrl:{
-type:String
-    }, 
+  
     article:[
         {
             type: mongoose.Schema.Types.ObjectId, 
