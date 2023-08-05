@@ -3,15 +3,15 @@ import authModel from "../model/authModel"
 import cloudinary from "../config/Cloudinary"
 
 
-export const createUser = async(req:any, res:Response)=> {
-    try {
+export const createUser = async(req:Request, res:Response)=> {
+    try { 
 
         const {userName, email, password} = req.body;
 
 
-const {secure_url, public_id} = await cloudinary.uploader.upload(req.file?.path)
+const {secure_url,public_id} = await cloudinary.uploader.upload(req.file?.path!)
 
-        const newUser = await authModel.create({
+        const newUser:any = await authModel.create({
             userName,
             email,
             password, 
@@ -26,6 +26,7 @@ const {secure_url, public_id} = await cloudinary.uploader.upload(req.file?.path)
         })
     } catch (error) {
         
+console.log(error)
         return res.status(404).json({
             message: "cant create user",
             data: error.message

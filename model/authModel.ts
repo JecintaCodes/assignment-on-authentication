@@ -26,15 +26,21 @@ const authModel = new mongoose.Schema({
         type: String
        
     },
+    avatarUrl:{
+type:String
+    }, 
     article:[
         {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId, 
             ref: "articles"
         },
     ]
-},
-{timestamps: true}
+}, 
+{
+    timestamps:true
+}
 
 )
+
 
 export default mongoose.model<iAuthData>("auths", authModel)
